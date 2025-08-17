@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>TinyStream — Music Player</title>
+  <meta name="theme-color" content="#0f172a" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div class="logo" aria-hidden="true"></div>
+    <div>
+      <h1>TinyStream</h1>
+      <div class="sub">Stream & queue your songs — no backend needed</div>
+    </div>
+    <div class="header-right">
+      <span class="pill">Shortcuts: <span class="kbd">Space</span> <span class="kbd">◀▶</span> <span class="kbd">M</span> <span class="kbd">S</span> <span class="kbd">R</span></span>
+    </div>
+  </header>
+
+  <main>
+    <!-- Library / Queue -->
+    <section class="panel library" aria-label="Library and queue">
+      <div class="lib-header">
+        <input id="search" type="search" placeholder="Search title or artist…" autocomplete="off" />
+        <div class="lib-actions">
+          <button id="addUrlBtn" class="btn">➕ Add URL</button>
+          <label class="btn" title="Upload audio files">
+            ⬆️ Upload
+            <input id="fileInput" type="file" accept="audio/*" multiple class="hidden" />
+          </label>
+          <button id="clearQueueBtn" class="btn danger">🗑 Clear</button>
+        </div>
+      </div>
+      <div id="tracks" class="tracks" role="listbox" aria-label="Track list"></div>
+    </section>
+
+    <!-- Player -->
+    <section class="panel player" aria-label="Now playing">
+      <div class="hero">
+        <div class="art" id="art">
+          <img id="artImg" alt="Cover art" src="https://picsum.photos/seed/ts-cover/800/800" />
+        </div>
+        <div class="info">
+          <div class="now">NOW PLAYING</div>
+          <div class="title-lg" id="nowTitle">—</div>
+          <div class="artist-lg" id="nowArtist">—</div>
+          <div class="chips">
+            <span id="chipType" class="chip">MP3</span>
+            <span id="chipBitrate" class="chip">— kbps</span>
+            <span id="chipSize" class="chip">—</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="controls">
+        <div class="row playrow">
+          <button id="btnShuffle" class="iconbtn" title="Shuffle (S)">🔀</button>
+          <button id="btnPrev" class="iconbtn" title="Previous (←)">⏮</button>
+          <button id="btnPlay" class="iconbtn big" title="Play/Pause (Space)">▶️</button>
+          <button id="btnNext" class="iconbtn" title="Next (→)">⏭</button>
+          <button id="btnRepeat" class="iconbtn" title="Repeat (R)">🔁</button>
+        </div>
+
+        <div class="row">
+          <div class="seek grow">
+            <span id="timeCur" class="time">0:00</span>
+            <input id="seek" type="range" min="0" max="1000" value="0" step="1" aria-label="Seek" />
+            <span id="timeDur" class="time">0:00</span>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="vol">
+            <button id="btnMute" class="iconbtn" title="Mute (M)">🔈</button>
+            <input id="vol" type="range" min="0" max="1" step="0.01" value="1" aria-label="Volume" style="width:160px"/>
+          </div>
+          <div class="queue-actions">
+            <button id="btnSave" class="btn">💾 Save Queue</button>
+            <button id="btnLoad" class="btn">📂 Load Queue</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    Built with the HTML5 <code>&lt;audio&gt;</code> API + Media Session. Drop MP3/OGG/M4A files here.
+  </footer>
+
+  <!-- Drag & drop mask -->
+  <div id="dropmask" class="dropmask" aria-hidden="true">
+    <div class="dropbox">
+      <h3>Drop audio files to add to queue</h3>
+      <p>We’ll create secure blob URLs locally. No upload occurs.</p>
+    </div>
+  </div>
+
+  <audio id="audio" crossorigin="anonymous"></audio>
+
+  <script src="script.js"></script>
+</body>
+</html>

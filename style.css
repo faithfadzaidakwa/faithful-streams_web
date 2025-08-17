@@ -1,0 +1,47 @@
+:root{
+  --bg:#0b1220;
+  --panel:#0f172a;
+  --panel-2:#111827;
+  --text:#e5e7eb;
+  --muted:#9ca3af;
+  --accent:#7c5cff;
+  --accent-2:#22d3ee;
+  --danger:#ef4444;
+  --radius:14px;
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0; font-family: ui-sans-serif,system-ui,Segoe UI,Roboto,Helvetica,Arial;
+  color:var(--text); background:linear-gradient(180deg,#0b1220,#0b1220 60%,#060914);
+  display:flex; flex-direction:column;
+}
+header{
+  padding:18px 20px; display:flex; align-items:center; gap:12px;
+  background:linear-gradient(180deg,#0b1220,#0f172a);
+  border-bottom:1px solid #1f2937; position:sticky; top:0; z-index:5;
+}
+header .logo{
+  width:40px;height:40px;border-radius:10px;background:
+  conic-gradient(from 200deg,var(--accent),var(--accent-2));
+  box-shadow:0 0 24px #7c5cff55 inset,0 0 24px #22d3ee55 inset;
+  flex:0 0 40px;
+}
+h1{font-size:18px;margin:0;font-weight:700;letter-spacing:.3px}
+.sub{font-size:12px;color:var(--muted)}
+.header-right{margin-left:auto;display:flex;gap:10px;align-items:center}
+.pill{
+  background:#0b132a;border:1px solid #1f2a44;color:#b8c7ff;
+  padding:8px 12px;border-radius:999px;font-size:12px
+}
+
+main{display:grid;grid-template-columns:360px 1fr;gap:18px;padding:18px;max-width:1280px;margin:0 auto;width:100%}
+@media (max-width: 980px){ main{grid-template-columns:1fr} }
+
+.panel{
+  background:linear-gradient(180deg,var(--panel),#0c1325);
+  border:1px solid #1f2937;border-radius:var(--radius); overflow:hidden;
+  box-shadow:0 8px 30px #0006;
+}
+
+/* ... continue with ALL the CSS from before ... */
