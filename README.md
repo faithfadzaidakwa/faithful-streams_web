@@ -1,4 +1,4 @@
-# 🎵 Faithful Streams – Web Music Player
+🎵 Faithful Streams – Web Music Player
 
 Faithful Streams is a lightweight, browser-based music streaming player built with vanilla JavaScript and the HTML5 `<audio>` element.  
 It allows you to stream, upload, and organize audio tracks directly in the browser.
@@ -18,7 +18,8 @@ It allows you to stream, upload, and organize audio tracks directly in the brows
 ---
 
 📸 Screenshots
-*(Optional: Add screenshots or GIFs of the player UI here)*
+![App Screenshot](player.png)
+
 
 ---
 
