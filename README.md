@@ -18,7 +18,7 @@ It allows you to stream, upload, and organize audio tracks directly in the brows
 ---
 
 📸 Screenshots
-![App Screenshot](player.png)
+![App Screenshot](assets/player.png)
 
 
 ---
